@@ -1,0 +1,16 @@
+{
+  "name": "atomic-css-components-test",
+  "version": "1.0.0",
+  "homepage": "https://github.com/atomic-css/components-test",
+  "authors": [
+    "Lukáš Mladý"
+  ],
+  "description": "Component for testing other components",
+  "main": "test.css",
+  "license": "MIT",
+  "ignore": [
+    ".*",
+    "CHANGELOG.md",
+    "component.json"
+  ]
+}

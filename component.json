@@ -1,0 +1,9 @@
+{
+  "name": "components-test",
+  "repo": "atomic-css/components-test",
+  "description": "Component for testing other components",
+  "version": "1.0.0",
+  "styles": ["test.css"],
+  "author": "Lukáš Mladý",
+  "license": "MIT"
+}

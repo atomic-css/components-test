@@ -1,0 +1,376 @@
+/* ==========================================================================
+   Test
+   ========================================================================== */
+
+/**
+ * The `Test` component is useful for structuring tests of other components
+ * and utilities. It mimics JavaScript's 'describe' and 'it' blocks.
+ *
+ * Example HTML:
+ *
+ * <div class="Test">
+ *   <ul class="Test-support">
+ *     <li class="Test-browser Test-browser--chrome">10+</li>
+ *     ...
+ *   </ul>
+ *
+ *   <h2 class="Test-describe">.ComponentName</h2>
+ *
+ *   <h3 class="Test-it [Test-it--success|Test-it--error]">Should do something.</h3>
+ *
+ *   <p>The test itself</p>
+ * </div>
+ */
+
+/* Component
+   ========================================================================== */
+
+/**
+ * Test component.
+ */
+
+.Test {
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 1024px;
+
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  background-color: #f4f4f4;
+  counter-reset: test-describe;
+}
+
+/* Descendants
+   ========================================================================== */
+
+/**
+ * Test title, mostly component or utility name.
+ */
+
+.Test-title {
+  padding-bottom: .5em;
+
+  font-size: 3rem;
+  font-weight: 100;
+  text-align: center;
+
+  border-bottom: 5px solid #888;
+}
+
+/* Common styles */
+
+.Test-describe,
+.Test-it {
+  position: relative;
+}
+
+/**
+ * CSS counter.
+ */
+
+.Test-describe:before,
+.Test-it:before {
+  display: inline-block;
+  margin-right: 1em;
+
+  font-size: 1.5rem;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #000;
+}
+
+/**
+ * Block label, either 'describe' or 'it'.
+ */
+
+.Test-describe:after,
+.Test-it:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: .25rem;
+
+  text-align: center;
+  font-size: 1rem;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #eee;
+
+  background-color: #111;
+}
+
+/**
+ * Describe block.
+ */
+
+.Test-describe {
+  margin-top: 8rem;
+  padding: 1rem;
+
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+  font-weight: 200;
+
+  border-bottom: 5px solid #aaa;
+  background-color: #ddd;
+
+  counter-reset: test-it;
+}
+
+/**
+ * CSS counter.
+ */
+
+.Test-describe:before {
+  content: counter(test-describe);
+  counter-increment: test-describe;
+}
+
+/**
+ * Block label.
+ */
+
+.Test-describe:after {
+  content: "describe";
+}
+
+/**
+ * It block.
+ */
+
+.Test-it {
+  margin-left: 2em;
+  padding: .25em 1em;
+
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 200;
+
+  background-color: #e0e0e0;
+}
+
+/**
+ * CSS counter.
+ */
+
+.Test-it:before {
+  content: counter(test-describe) "." counter(test-it);
+  font-style: normal;
+  counter-increment: test-it;
+}
+
+/**
+ * Block label.
+ */
+
+.Test-it:after {
+  content: "it";
+  font-style: normal;
+}
+
+/**
+ * Supported browsers list.
+ */
+
+.Test-support {
+  margin: 0 0 1rem;
+  padding: 0;
+
+  list-style-type: none;
+  text-align: center;
+}
+
+/**
+ * Browser. An instance needs to be created via a modifier.
+ */
+
+.Test-browser {
+  display: inline-block;
+  margin: 0 5px;
+  padding-top: 80px;
+  width: 80px;
+  vertical-align: top;
+
+  font-size: .75rem;
+  font-weight: 500;
+  text-align: center;
+  background: center top no-repeat;
+}
+
+.Test-browser:before {
+  font-weight: 200;
+}
+
+/* Descendant modifiers
+   ========================================================================== */
+
+/**
+ * Successfull test.
+ */
+
+.Test-it--success {
+  background-color: #9acd32;
+}
+
+/**
+ * Add a checkmark before the test number.
+ */
+
+.Test-it--success:before {
+  content: "\2713" " " counter(test-describe) "." counter(test-it);
+}
+
+.Test-it--success:after {
+  background-color: #759926;
+}
+
+/**
+ * Errorneous test.
+ */
+
+.Test-it--error {
+  background-color: #e60000;
+}
+
+/**
+ * Add an x mark before the test number.
+ */
+
+.Test-it--error:before {
+  content: "\2718" " " counter(test-describe) "." counter(test-it);
+}
+
+.Test-it--error:after {
+  background-color: darkred;
+}
+
+/* Browsers */
+
+/**
+ * Android.
+ */
+
+.Test-browser--android {
+  background-image: url(images/android.png);
+}
+
+.Test-browser--android:before {
+  content: "Android "
+}
+
+/**
+ * Blackberry.
+ */
+
+.Test-browser--blackberry {
+  background-image: url(images/blackberry.png);
+}
+
+.Test-browser--blackberry:before {
+  content: "Blackberry "
+}
+
+/**
+ * Chrome.
+ */
+
+.Test-browser--chrome {
+  background-image: url(images/chrome.png);
+}
+
+.Test-browser--chrome:before {
+  content: "Chrome "
+}
+
+/**
+ * Chrome Canary.
+ */
+
+.Test-browser--chromeCanary {
+  background-image: url(images/chrome-canary.png);
+}
+
+.Test-browser--chromeCanary:before {
+  content: "Chrome Canary "
+}
+
+/**
+ * Firefox.
+ */
+
+.Test-browser--firefox {
+  background-image: url(images/firefox.png);
+}
+
+.Test-browser--firefox:before {
+  content: "Firefox "
+}
+
+/**
+ * Firefox Nightly.
+ */
+
+.Test-browser--firefoxNightly {
+  background-image: url(images/firefox-nightly.png);
+}
+
+.Test-browser--firefoxNightly:before {
+  content: "Firefox Nightly "
+}
+
+/**
+ * Internet Explorer.
+ */
+
+.Test-browser--ie {
+  background-image: url(images/ie.png);
+}
+
+.Test-browser--ie:before {
+  content: "IE "
+}
+
+/**
+ * Mobile Internet Explorer.
+ */
+
+.Test-browser--ieMobile {
+  background-image: url(images/ie-mobile.png);
+}
+
+.Test-browser--ieMobile:before {
+  content: "IE Mobile "
+}
+
+/**
+ * Opera.
+ */
+
+.Test-browser--opera {
+  background-image: url(images/opera.png);
+}
+
+.Test-browser--opera:before {
+  content: "Opera "
+}
+
+/**
+ * Safari.
+ */
+
+.Test-browser--safari {
+  background-image: url(images/safari.png);
+}
+
+.Test-browser--safari:before {
+  content: "Safari "
+}
+
+/**
+ * Safari iOS.
+ */
+
+.Test-browser--safariIos {
+  background-image: url(images/safari-ios.png);
+}
+
+.Test-browser--safariIos:before {
+  content: "iOS Safari "
+}
