@@ -17,7 +17,26 @@ Read more about [Atomic framework](https://github.com/atomic-css/atomic).
 
 ## Available classes
 
-* `Test` - core button component
+* `Test` - core test component
+* `Test-title` - test title
+* `Test-describe` - the 'describe' block
+* `Test-it` - the 'it' block
+* `Test-it--success` - successfull 'it' block
+* `Test-it--error` - errorneous 'it' block
+* `Test-run` - the 'it' block
+* `Test-support` - browser support wrapper
+* `Test-browser` - browser and its version
+* `Test-browser--android` - Android
+* `Test-browser--blackberry` - Blackberry
+* `Test-browser--chrome` - Chrome
+* `Test-browser--chromeCanary` - Chrome Canary
+* `Test-browser--firefox` - Firefox
+* `Test-browser--firefoxNightly` - Firefox Nightly
+* `Test-browser--ie` - Internet Explorer
+* `Test-browser--ieMobile` - IE Mobile
+* `Test-browser--opera` - Opera
+* `Test-browser--safari` - Safari
+* `Test-browser--safariIos` - iOS Safari
 
 ## Usage
 
