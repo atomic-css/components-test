@@ -54,7 +54,9 @@ It mimics JavaScript's `describe` and `it` blocks.
 
   <h3 class="Test-it [Test-it--success|Test-it--error]">Should do something.</h3>
 
-  <p>The test itself</p>
+  <div class="Test-run">
+    <p>The test itself</p>
+  </div>
 </div>
 ```
 
